@@ -1,16 +1,15 @@
-// Home screen
 import {StyleSheet, Text} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-const Home = () => {
+const Quiz = () => {
   return (
     <SafeAreaView>
-      <Text>Home</Text>
+      <Text>Quiz</Text>
     </SafeAreaView>
   );
 };
 
-export default Home;
+export default Quiz;
 
 const styles = StyleSheet.create({});
