@@ -11,7 +11,7 @@ import {spacing} from '../theme/spacing';
 import {radii} from '../theme/radii';
 import colorScheme from '../theme/colorsScheme';
 
-type CustomButtonProps = {
+type AlternativeButtonProps = {
   title: string;
   onPress?: () => void;
   disabled?: boolean;
@@ -19,13 +19,13 @@ type CustomButtonProps = {
   style?: StyleProp<ViewStyle>;
 };
 
-const CustomButton = ({
+const AlternativeButton = ({
   title,
   onPress,
   textStyle,
   style,
   disabled = false,
-}: CustomButtonProps) => {
+}: AlternativeButtonProps) => {
   return (
     <TouchableOpacity
       style={[styles.button, style, disabled && styles.disabled]}
@@ -38,19 +38,21 @@ const CustomButton = ({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colorScheme.light.primary,
+    backgroundColor: colorScheme.light.background,
     padding: spacing.md,
+    borderColor: colorScheme.light.primary,
+    borderWidth: 2,
     borderRadius: radii.md,
     alignItems: 'center',
     marginVertical: spacing.sm,
   },
   disabled: {
-    backgroundColor: colorScheme.light.buttonDisabledColor,
+    borderColor: colorScheme.light.buttonDisabledColor,
   },
   text: {
-    color: colorScheme.light.textButtom,
+    color: colorScheme.light.textPrimary,
     fontWeight: 'bold',
   },
 });
 
-export default CustomButton;
+export default AlternativeButton;
