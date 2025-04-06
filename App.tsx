@@ -1,14 +1,14 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
-import QuestionButton from './src/components/question/QuestionButton';
+
+import QuestionCard from './src/components/question/QuestionCard';
+import {questions} from './src/data/mock/dummyData';
 
 const App = () => {
+  const q = questions[0];
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <QuestionButton title="this is question" />
-      <QuestionButton title="this is question" isCorrect />
-      <QuestionButton title="this is question" isCorrect={false} />
-      <QuestionButton title="this is question" disabled />
+      <QuestionCard question={q} />
     </View>
   );
 };

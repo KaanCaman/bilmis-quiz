@@ -13,6 +13,9 @@ const colorScheme = {
         // quesiton button border color
         questionButtonBorderColor: "#E4E4E4",
 
+        // shadow color :
+        cardShadowColor : '#000000',
+
         // correct , wrong color
         correct : "#DCFCE7",
         wrong : "#FEE2E2",
