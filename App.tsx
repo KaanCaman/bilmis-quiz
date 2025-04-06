@@ -1,12 +1,14 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
-import AlternativeButton from './src/components/AlternativeButton';
+
+import QuestionCard from './src/components/question/QuestionCard';
+import {questions} from './src/data/mock/dummyData';
 
 const App = () => {
+  const q = questions[0];
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <AlternativeButton title="this is alternative" />
-      <AlternativeButton title="this is alternative" disabled />
+      <QuestionCard question={q} />
     </View>
   );
 };
