@@ -1,12 +1,14 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import AlternativeButton from './src/components/AlternativeButton';
+import QuestionButton from './src/components/question/QuestionButton';
 
 const App = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <AlternativeButton title="this is alternative" />
-      <AlternativeButton title="this is alternative" disabled />
+      <QuestionButton title="this is question" />
+      <QuestionButton title="this is question" isCorrect />
+      <QuestionButton title="this is question" isCorrect={false} />
+      <QuestionButton title="this is question" disabled />
     </View>
   );
 };
