@@ -7,6 +7,9 @@ const colorScheme = {
         // background color
         background: "#FFFFFF",
 
+        // button disabled color
+        buttonDisabledColor : "#BDBDBD",
+
         // text colors
         textPrimary: "#000000",
         textButtom: "#FFFFFF",
