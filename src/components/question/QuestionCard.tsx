@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Question} from '../../types/question/Question';
 import QuestionButton from './QuestionButton';
@@ -15,14 +15,19 @@ type QuestionCardType = {
 };
 
 const QuestionCard = ({question, onClick}: QuestionCardType) => {
+  const [select, setSelect] = useState<Option>();
   return (
     <View style={styles.card}>
       <Text style={styles.question}>{question.question}</Text>
       {question.options.map((option, index) => (
         <QuestionButton
           key={index}
+          isSelected={select === option.key}
           onPress={() => {
+            setSelect(option.key);
             if (onClick) {
+              //will update the state with the setState reference from above with prop drilling.
+              //prop drilling ile yukarıdan gelen setState referansı ile state güncelleyecek
               onClick(option.key);
             }
           }}

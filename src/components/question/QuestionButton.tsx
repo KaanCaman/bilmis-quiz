@@ -17,7 +17,7 @@ type QuestionButtonProps = {
   disabled?: boolean;
   textStyle?: StyleProp<TextStyle>;
   style?: StyleProp<ViewStyle>;
-
+  isSelected?: boolean;
   isCorrect?: boolean | undefined;
 };
 
@@ -27,6 +27,7 @@ const QuestionButton = ({
   disabled,
   textStyle,
   style,
+  isSelected = false,
   isCorrect,
 }: QuestionButtonProps) => {
   return (
@@ -35,6 +36,7 @@ const QuestionButton = ({
         styles.button,
         style,
         disabled && styles.disabled,
+        isSelected && styles.selected,
         isCorrect !== undefined
           ? isCorrect
             ? styles.correct
@@ -75,5 +77,9 @@ const styles = StyleSheet.create({
   wrong: {
     backgroundColor: colorScheme.light.wrong,
     borderColor: 'transparent',
+  },
+  selected: {
+    backgroundColor: colorScheme.light.questionButtonBorderColor,
+    borderColor: colorScheme.light.buttonDisabledColor,
   },
 });
