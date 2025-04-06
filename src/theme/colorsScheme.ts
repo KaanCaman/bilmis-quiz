@@ -10,7 +10,7 @@ const colorScheme = {
         // text colors
         textPrimary: "#000000",
         textButtom: "#FFFFFF",
-        textSecondary: "717171",
+        textSecondary: "#717171",
     },
 };
 export default colorScheme;
