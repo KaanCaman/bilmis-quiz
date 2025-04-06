@@ -7,4 +7,5 @@ export type FontSizes = {
     md: number; // Medium font size
     lg: number; // Large font size
     xl: number; // Extra large font size
+    xxl : number; // Extra Extra large size
 };
