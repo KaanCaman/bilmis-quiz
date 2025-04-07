@@ -17,6 +17,10 @@ export const uiText = {
 
     // alert
     warning : 'Uyarı !',
-    noBackAlert : 'Quiz esnasında geri gidilmez çok bilmiş',
+    noBackAlert : 'Geri gidilmez çok bilmiş',
     selectOptionAlert : 'Lütfen bir seçenek seçin',
+
+    //
+    tryAgain : 'Tekrar dene',
+    homePage : 'Ana Sayfa',
 };
