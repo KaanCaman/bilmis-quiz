@@ -19,6 +19,7 @@ type QuestionButtonProps = {
   style?: StyleProp<ViewStyle>;
   isSelected?: boolean;
   isCorrect?: boolean | undefined;
+  isWrong?: boolean | undefined;
 };
 
 const QuestionButton = ({
@@ -29,19 +30,16 @@ const QuestionButton = ({
   style,
   isSelected = false,
   isCorrect,
+  isWrong,
 }: QuestionButtonProps) => {
   return (
     <TouchableOpacity
       style={[
         styles.button,
         style,
-        disabled && styles.disabled,
         isSelected && styles.selected,
-        isCorrect !== undefined
-          ? isCorrect
-            ? styles.correct
-            : styles.wrong
-          : {},
+        isCorrect && styles.correct,
+        isWrong && styles.wrong,
       ]}
       onPress={onPress}
       disabled={disabled}>

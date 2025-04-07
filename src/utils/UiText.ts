@@ -11,4 +11,12 @@ export const uiText = {
 
     // button
     startQuiz : 'Quize Başla !',
+    nextQuestion : 'Sonraki Soru',
+    checkAnswer : 'Kontrol et',
+    finsihQuiz : 'Bitir !',
+
+    // alert
+    warning : 'Uyarı !',
+    noBackAlert : 'Quiz esnasında geri gidilmez çok bilmiş',
+    selectOptionAlert : 'Lütfen bir seçenek seçin',
 };

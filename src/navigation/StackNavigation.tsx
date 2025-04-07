@@ -21,6 +21,11 @@ const RootStack = createNativeStackNavigator({
     // Quiz screen
     Quiz: {
       screen: Quiz,
+      options: {
+        headerShown: false,
+        headerLeft: undefined,
+        gestureEnabled: false,
+      },
     },
     //
 
