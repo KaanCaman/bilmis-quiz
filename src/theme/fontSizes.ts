@@ -10,4 +10,5 @@ export const fontSizes:FontSizes = {
     md: 16,   // Medium font size
     lg: 20,   // Large font size
     xl: 24,   // Extra large font size
+    xxl:48,   // Extra extra font size
   };
