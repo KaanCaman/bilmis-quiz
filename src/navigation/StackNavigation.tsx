@@ -32,6 +32,11 @@ const RootStack = createNativeStackNavigator({
     // Result Screen
     Result: {
       screen: Result,
+      options: {
+        headerShown: false,
+        headerLeft: undefined,
+        gestureEnabled: false,
+      },
     },
     //
   },

@@ -18,6 +18,9 @@ import {questions} from '../data/mock/dummyData';
 import CustomButton from '../components/CustomButton';
 import {uiText} from '../utils/UiText';
 import {Option} from '../types/question/Option';
+import {useNavigation} from '@react-navigation/native';
+
+const scorePoint = 100 / questions.length;
 
 const Quiz = () => {
   const [questionIndex, setQuestionIndex] = useState<number>(0);
@@ -25,6 +28,7 @@ const Quiz = () => {
   const [isCorrect, setIsCorrect] = useState<boolean | undefined>(undefined);
   const [answer, setAnswer] = useState<Option | undefined>(undefined);
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
+  const navigation = useNavigation();
 
   useEffect(() => {
     const onBackPress = () => {
@@ -55,7 +59,6 @@ const Quiz = () => {
       setIsCorrect(result);
       if (result) {
         setScore(prev => prev + 1);
-        console.log(score);
       }
       setIsSubmit(false);
     }, 500);
@@ -77,6 +80,10 @@ const Quiz = () => {
   }
   function handleFinish() {
     // go result page
+    navigation.navigate('Result', {
+      score: score * scorePoint,
+      totalQuestions: questions.length,
+    });
   }
 
   // Butonun davranışını kontrol eden fonksiyon
