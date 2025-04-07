@@ -1,13 +1,14 @@
 import React, {useEffect, useRef} from 'react';
-import {Animated, View, StyleSheet} from 'react-native';
+import {Animated, View, StyleSheet, ViewStyle, StyleProp} from 'react-native';
 import {spacing} from '../theme/spacing';
 import colorScheme from '../theme/colorsScheme';
 
 type ProgressBarProps = {
   progress: number;
+  style?: StyleProp<ViewStyle>;
 };
 
-const ProgressBar = ({progress}: ProgressBarProps) => {
+const ProgressBar = ({progress, style}: ProgressBarProps) => {
   // Create an Animated.Value using useRef to persist the value across renders
   // This prevents re-creating the animation value on every render.
   //
@@ -49,7 +50,7 @@ const ProgressBar = ({progress}: ProgressBarProps) => {
   return (
     // Container view for the progress bar
     // İlerleme çubuğu için konteyner view
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Animated.View style={[styles.progressBar, {width: widthInterpolated}]} />
     </View>
   );
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: 10,
-    backgroundColor: colorScheme.light.textSecondary,
+    backgroundColor: colorScheme.light.questionButtonBorderColor,
     borderRadius: spacing.sm,
     overflow: 'hidden', // bar dışına taşan kısımları gizler
   },

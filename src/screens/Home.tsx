@@ -24,6 +24,9 @@ const Home = () => {
         title={uiText.startQuiz}
         style={styles.startQuizButton}
         textStyle={styles.startQuizText}
+        onPress={() => {
+          navigation.navigate('Quiz');
+        }}
       />
     </SafeAreaView>
   );
